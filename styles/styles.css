@@ -13,7 +13,7 @@
  :root {
   /* colors */
   --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-hover-color: #f68e1e;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
@@ -128,7 +128,7 @@ a:any-link {
 
 a:hover {
   text-decoration: underline;
-  color: var(--link-hover-color);
+  color: var(--link-hover-color #f68e1e);
 }
 
 /* buttons */
