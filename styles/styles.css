@@ -12,17 +12,17 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
+  --link-color: #f68e1e;
   --link-hover-color: #f68e1e;
-  --background-color: #fff;
+  --background-color: #ffffff;
   --overlay-background-color: #eeeeee;
   --highlight-background-color: #cccccc;
-  --text-color: #000;
+  --text-color: #f68e1e;
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
-  --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --body-font-family: century-gothic, sans-serif;
+  --heading-font-family: century-gothic, sans-serif;
+  --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
 
   /* body sizes */
   --body-font-size-m: 22px;
