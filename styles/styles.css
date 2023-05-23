@@ -14,10 +14,10 @@
   /* colors */
   --link-color: #f68e1e;
   --link-hover-color: #f68e1e;
-  --background-color: #ffffff;
-  --overlay-background-color: #eeeeee;
-  --highlight-background-color: #cccccc;
-  --text-color: #000000;
+  --background-color: #fff;
+  --overlay-background-color: #eee;
+  --highlight-background-color: #ccc;
+  --text-color: #000;
 
   /* fonts */
   --body-font-family: century-gothic, sans-serif;
@@ -128,7 +128,7 @@ a:any-link {
 
 a:hover {
   text-decoration: underline;
-  color: var(--link-hover-color #f68e1e);
+  color: var(--link-hover-color, #f68e1e);
 }
 
 /* buttons */
