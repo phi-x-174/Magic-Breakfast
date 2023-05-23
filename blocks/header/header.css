@@ -3,7 +3,6 @@ header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
-  position: fixed;
 }
 
 header nav {
@@ -17,7 +16,7 @@ header nav {
   margin: auto;
   max-width: 1264px;
   height: var(--nav-height);
-  padding: 0 1rem;
+  padding: 40px 1rem 0;
   font-family: var(--body-font-family);
 }
 
@@ -148,17 +147,58 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: 208px;
+  height: 124px;
 }
 
 /* sections */
-header nav .nav-sections {
+header nav .nav-sections{
+  margin-top: 40px;
   grid-area: sections;
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
   background-color: var(--overlay-color);
+}
+
+header nav .topnav  {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #999;
+}
+
+header nav .topnav ul {
+  padding-right: 70px;
+  float: right;
+  list-style: none;
+  padding-left: 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+}
+
+header nav .topnav .icon {
+  padding: 0.5rem 1rem;
+}
+
+header nav .topnav svg {
+  width: 80%;
+  height: 80%;
+}
+
+header nav .topnav a:any-link {
+  fill: white;
+}
+
+header nav .topnav a:hover {
+  fill: black;
+}
+
+
+header nav .topnav li {
+  display: inline;
 }
 
 header nav[aria-expanded="true"] .nav-sections {
@@ -167,7 +207,7 @@ header nav[aria-expanded="true"] .nav-sections {
   align-self: start;
 }
 
-header nav .nav-sections ul  {
+header nav .nav-sections > ul{
   list-style: none;
   padding-left: 0;
   font-size: var(--body-font-size-s);
@@ -223,10 +263,11 @@ header nav .nav-sections ul > li > ul > li {
     transform: rotate(315deg);
   }
 
-  header nav .nav-sections ul {
+  header nav .nav-sections > ul {
     display: flex;
     gap: 2em;
-    margin: 0;
+    margin-top: 70px;
+    margin-bottom: 50px;
     font-size: var(--body-font-size-xs);
   }
 
@@ -239,6 +280,10 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections > ul > li > ul {
     display: none;
     position: relative;
+  }
+
+  header nav .nav-sections .topnav ul {
+    margin: 0;
   }
 
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
