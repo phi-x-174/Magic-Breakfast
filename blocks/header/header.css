@@ -230,6 +230,7 @@ header nav .nav-sections ul > li {
 
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
+  list-style: none;
   text-transform: none;
 }
 
@@ -280,42 +281,73 @@ header nav .nav-sections ul > li > ul > li {
     font-size: 15px;
   }
 
+
   header nav .nav-sections > ul > li {
     flex: 0 1 auto;
     position: relative;
     font-weight: 600;
+
   }
 
+
+
+  header nav .nav-sections a:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  /* have not been able to make the height transition,
+     so using opacity instead to make the menu items fade
+   */
   header nav .nav-sections > ul > li > ul {
-    display: none;
-    position: relative;
-  }
-
-  header nav .nav-sections .topnav ul {
-    margin: 0;
-  }
-
-  header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
+    transition: all 0.5s ease-in-out;
     display: block;
     position: absolute;
     left: -1em;
     width: 200px;
     margin-top: 12px;
     padding: 1em;
-    background-color: var(--highlight-background-color);
+    background-color: var(--background-color);
     white-space: initial;
+    border-top: 2px solid #f68e1e;
+    opacity: 0;
   }
 
+  header nav .nav-sections .topnav ul {
+    margin: 0;
+  }
+
+
+  header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
+    transition: all 0.5s ease-in-out;
+    display: block;
+    position: absolute;
+    left: -1em;
+    width: 200px;
+    margin-top: 12px;
+    padding: 1em;
+    background-color: var(--background-color);
+    white-space: initial;
+    border-top: 2px solid #f68e1e;
+    opacity: 1;
+  }
+
+  /* This generates the arrow pointing up.
+     adjust border left right, bottom and top offset
+     to change the size.
+     Adjust left to change the possition.
+     The bar is on the top of the ul itself (ie not here)
+   */
   header nav .nav-sections > ul > li > ul::before {
     content: '';
     position: absolute;
-    top: -8px;
-    left: 8px;
+    top: -10px;
+    left: 11px;
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--highlight-background-color);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f68e1e; /* var(--background-color); */
   }
 
   header nav .nav-sections > ul > li > ul > li {

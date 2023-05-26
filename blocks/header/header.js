@@ -110,14 +110,23 @@ export default async function decorate(block) {
     });
 
     const navSections = nav.querySelector('.nav-sections');
+    // modified from boilerplate to trigger on mouse enter into the nav section
+    // ignores the top menu div.
     if (navSections) {
+      navSections.querySelector(':scope > ul').addEventListener('mouseleave', () => {
+        if (isDesktop.matches) {
+          // when the outer ul containing the menu items is exited, then
+          // hide all menus that are showing.
+          toggleAllNavSections(navSections);
+        }
+      });
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
         if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-        navSection.addEventListener('click', () => {
+        navSection.addEventListener('mouseenter', () => {
           if (isDesktop.matches) {
-            const expanded = navSection.getAttribute('aria-expanded') === 'true';
+            // when a li is entered, hide other li items and show this one.
             toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            navSection.setAttribute('aria-expanded', 'true');
           }
         });
       });
