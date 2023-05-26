@@ -41,10 +41,11 @@ describe('Header block', () => {
   it('Section title shows and hides section on desktop', async () => {
     await setViewport({ width: 900, height: 640 });
     const sections = document.querySelector('.header .nav-sections');
-    const title = sections.querySelector(':scope li');
-    title.click();
+    const container = sections.querySelector(':scope ul');
+    const title = container.querySelector(':scope li');
+    title.dispatchEvent(new MouseEvent('mouseenter'));
     expect(title.getAttribute('aria-expanded')).to.equal('true');
-    title.click();
+    container.dispatchEvent(new MouseEvent('mouseleave'));
     expect(title.getAttribute('aria-expanded')).to.equal('false');
   });
 });
